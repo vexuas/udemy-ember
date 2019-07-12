@@ -1,5 +1,4 @@
 import Route from '@ember/routing/route';
-import $ from 'jquery';
 
 /*
 const cars = [
@@ -25,8 +24,6 @@ const cars = [
 
 export default Route.extend({
   model: function() {
-    return $.getJSON('car.json').then(function(data) {
-      return data;
-    });
+    return this.store.findAll('car');
   }
 });
